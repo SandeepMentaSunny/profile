@@ -1,0 +1,35 @@
+<div *ngIf="usersData.length > 0">
+    <table class="table table-responsive table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Username</th>
+                <th>Email Id</th>
+                <th>Social Profiles</th>
+                <th>Favourite Game</th>
+                <th>Team you Like</th>
+                <th>Favourite Country to Play</th>
+                <th>First TV</th>
+                <th>First Credit Card bank</th>
+                <th>Holiday Place</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of usersData; let i=index;">
+                <td>{{i+1}}</td>
+                <td>{{user?.USERNAME}}</td>
+                <td>{{user?.EMAIL_ID}}</td>
+                <td>{{user?.SOCIAL_PROFILES}}</td>
+                <td>{{user?.FAVOURITE_GAME}}</td>
+                <td>{{user?.TEAM_YOU_LIKE}}</td>
+                <td>{{user?.FAVOURITE_COUNTRY}}</td>
+                <td>{{user?.FIRST_TV}}</td>
+                <td>{{user?.FIRST_CREDIT_CARD}}</td>
+                <td>{{user?.HOLIDAY_PLACE}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="usersData.length === 0">
+    <h3 class="alert-success">No Users are found</h3>
+</div>

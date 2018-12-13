@@ -1,0 +1,24 @@
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+    make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+    sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+    including versions of Lorem Ipsum.</p>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+    make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+    sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+    including versions of Lorem Ipsum.</p>
+<form [formGroup]="privacyForm">
+    <section class="example-section">
+        <mat-checkbox class="example-margin" [formControl]="privacyForm.controls['ACCEPT']"> Please agree the terms
+            and conditions.</mat-checkbox>
+    </section>
+    <div class="button-lists">
+        <ul>
+            <li><button mat-raised-button matStepperPrevious><i class="fas fa-arrow-left"></i> Back</button></li>
+            <li><button mat-raised-button class="skip-button" [disabled]="!privacyForm.valid" (click)="submitForm()">Submit</button></li>
+        </ul>
+    </div>
+</form>

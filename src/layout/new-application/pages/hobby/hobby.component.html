@@ -1,0 +1,26 @@
+<form [formGroup]="hobbyForm">
+    <mat-form-field>
+        <input matInput placeholder="What’s your favourite game ?" [formControl]="hobbyForm.controls['FAVOURITE_GAME']"
+            required>
+        <mat-error *ngIf="hobbyForm.controls['FAVOURITE_GAME'].hasError('required') && hobbyForm.controls['FAVOURITE_GAME'].touched">{{AppLitteralsConfig.required}}</mat-error>
+        <mat-error *ngIf="!hobbyForm.controls['FAVOURITE_GAME'].hasError('required') && hobbyForm.controls['FAVOURITE_GAME'].invalid && hobbyForm.controls['USERNAME'].touched">{{AppLitteralsConfig.username}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Which team do you like ?" [formControl]="hobbyForm.controls['TEAM_YOU_LIKE']"
+            required>
+        <mat-error *ngIf="hobbyForm.controls['TEAM_YOU_LIKE'].hasError('required') && hobbyForm.controls['TEAM_YOU_LIKE'].touched">{{AppLitteralsConfig.required}}</mat-error>
+        <mat-error *ngIf="!hobbyForm.controls['TEAM_YOU_LIKE'].hasError('required') && hobbyForm.controls['TEAM_YOU_LIKE'].invalid && hobbyForm.controls['TEAM_YOU_LIKE'].touched">{{AppLitteralsConfig.emailId}}</mat-error>
+    </mat-form-field>
+    <mat-radio-group class="example-radio-group" [formControl]="hobbyForm.controls['FAVOURITE_COUNTRY']">
+        <label for="">Favourite country to play:</label>
+        <mat-radio-button *ngFor="let country of countries" [value]="country.CODE">
+            {{country.DESC}}
+        </mat-radio-button>
+    </mat-radio-group>
+    <div class="button-lists">
+        <ul>
+            <li><button mat-raised-button matStepperPrevious><i class="fas fa-arrow-left"></i> Back</button></li>
+            <li><button mat-raised-button matStepperNext class="skip-button" (click)='gotoNextStep()' [disabled]="!hobbyForm.valid">Next <i class="fas fa-arrow-right"></i></button></li>
+        </ul>
+    </div>
+</form>

@@ -1,0 +1,23 @@
+<form [formGroup]="profileForm">
+    <mat-form-field>
+        <input matInput placeholder="Username" [formControl]="profileForm.controls['USERNAME']" required>
+        <mat-error *ngIf="profileForm.controls['USERNAME'].hasError('required') && profileForm.controls['USERNAME'].touched">{{AppLitteralsConfig.required}}</mat-error>
+        <mat-error *ngIf="!profileForm.controls['USERNAME'].hasError('required') && profileForm.controls['USERNAME'].invalid && profileForm.controls['USERNAME'].touched">{{AppLitteralsConfig.username}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Email Id" [formControl]="profileForm.controls['EMAIL_ID']" required>
+        <mat-error *ngIf="profileForm.controls['EMAIL_ID'].hasError('required') && profileForm.controls['EMAIL_ID'].touched">{{AppLitteralsConfig.required}}</mat-error>
+        <mat-error *ngIf="!profileForm.controls['EMAIL_ID'].hasError('required') && profileForm.controls['EMAIL_ID'].invalid && profileForm.controls['EMAIL_ID'].touched">{{AppLitteralsConfig.emailId}}</mat-error>
+    </mat-form-field>
+    <mat-radio-group class="example-radio-group" [formControl]="profileForm.controls['SOCIAL_PROFILES']">
+        <label for="">Pref of Social Profiles:</label>
+        <mat-radio-button *ngFor="let social of socialProfile" [value]="social.CODE">
+            {{social.DESC}}
+        </mat-radio-button>
+    </mat-radio-group>
+    <div class="button-lists">
+        <ul>
+            <li><button mat-raised-button class="skip-button" (click)='gotoNextStep()' [disabled]="!profileForm.valid">Next <i class="fas fa-arrow-right"></i></button></li>
+        </ul>
+    </div>
+</form>

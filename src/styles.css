@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+body{
+    margin: 0;
+}
+mat-card{
+    margin: 10px auto;
+}
+.mat-form-field{
+    width: 1000px;
+    margin: 15px auto;
+    display: table !important;
+}
+.mat-radio-button{
+    padding: 10px;
+}
+.mat-radio-group{
+    margin-left: 32px;
+}
+.skip-button{
+    background-color: #3f51b5;
+    color: #fff !important;
+    margin-left: 10px !important;
+}
+.mat-card-actions{
+    float: right;
+    margin-top: 32px;
+}
+.navbar{
+    flex-direction: row-reverse !important;
+}

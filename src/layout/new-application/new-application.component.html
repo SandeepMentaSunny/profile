@@ -1,0 +1,18 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <ng-template matStepLabel>Profile</ng-template>
+        <app-profile></app-profile>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <ng-template matStepLabel>Hobby</ng-template>
+        <app-hobby></app-hobby>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Settings</ng-template>
+        <app-settings></app-settings>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Privacy</ng-template>
+        <app-privacy></app-privacy>
+    </mat-step>
+</mat-horizontal-stepper>

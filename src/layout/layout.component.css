@@ -1,0 +1,21 @@
+a{
+    color: #fff;
+    font-weight: 800;
+    text-decoration: none;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul li{
+    float: left;
+    padding: 0 10px;
+}
+
+ul li a{
+    font-size: 16px;
+}
+.container{
+    margin: 30px auto;
+}

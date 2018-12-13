@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <mat-toolbar-row>
+                <i class="far fa-user-circle"></i> &nbsp;<a href="javascript:;" [routerLink]="['dashboard']">Profile</a>
+            </mat-toolbar-row>
+        </div>
+        <div class="col-md-6">
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="javascript:;" [routerLink]="['dashboard']">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" [routerLink]="['new-app']">New Application</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</mat-toolbar>
+<mat-card class="container">
+    <router-outlet></router-outlet>
+</mat-card>

@@ -1,0 +1,25 @@
+<form [formGroup]="settingsForm">
+    <mat-form-field>
+        <input matInput placeholder="Your First TV ?" [formControl]="settingsForm.controls['FIRST_TV']" required>
+        <mat-error *ngIf="settingsForm.controls['FIRST_TV'].hasError('required') && settingsForm.controls['FIRST_TV'].touched">{{AppLitteralsConfig.required}}</mat-error>
+        <mat-error *ngIf="!settingsForm.controls['FIRST_TV'].hasError('required') && settingsForm.controls['FIRST_TV'].invalid && settingsForm.controls['FIRST_TV'].touched">{{AppLitteralsConfig.username}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Your first credit card bank ?" [formControl]="settingsForm.controls['FIRST_CREDIT_CARD']"
+            required>
+        <mat-error *ngIf="settingsForm.controls['FIRST_CREDIT_CARD'].hasError('required') && settingsForm.controls['FIRST_CREDIT_CARD'].touched">{{AppLitteralsConfig.required}}</mat-error>
+        <mat-error *ngIf="!settingsForm.controls['FIRST_CREDIT_CARD'].hasError('required') && settingsForm.controls['FIRST_CREDIT_CARD'].invalid && settingsForm.controls['FIRST_CREDIT_CARD'].touched">{{AppLitteralsConfig.emailId}}</mat-error>
+    </mat-form-field>
+    <mat-radio-group class="example-radio-group" [formControl]="settingsForm.controls['HOLIDAY_PLACE']">
+        <label for="">Your holiday place ?</label>
+        <mat-radio-button *ngFor="let holidayPlace of holidayPlaces" [value]="holidayPlace.CODE">
+            {{holidayPlace.DESC}}
+        </mat-radio-button>
+    </mat-radio-group>
+    <div class="button-lists">
+        <ul>
+            <li><button mat-raised-button matStepperPrevious><i class="fas fa-arrow-left"></i> Back</button></li>
+            <li><button mat-raised-button matStepperNext class="skip-button" [disabled]="!settingsForm.valid" (click)="gotoNextStep()">Next <i class="fas fa-arrow-right"></i></button></li>
+        </ul>
+    </div>
+</form>
